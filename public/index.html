@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Document</title>
+
+    
+</head>
+<body>
+
+    <div id="container">
+        <div class="random-element"></div>
+        <div style="width:50px; height:50px; background-color:red;" id="sendEmailButton">Click Me</div>
+    </div>
+    <script src="script.js"></script>
+    <script src="../socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        // Listen for the reload event from the server
+        socket.on('reload', () => {
+            // Reload the page when the server signals a reload
+            location.reload(true);
+        });
+    </script>
+</body>
+</html>

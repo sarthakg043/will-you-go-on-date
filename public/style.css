@@ -1,0 +1,12 @@
+body{
+    background: rgb(61, 227, 245);
+}
+
+.random-element{
+    height: 50px;
+    width: 50px;
+    background-color: blueviolet;
+    position: absolute;
+    transition: all 1s ease-out;
+}
+

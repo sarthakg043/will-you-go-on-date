@@ -1,3 +1,16 @@
 # will-you-go-on-date
-<hr>
-Visit the APP <a href="#">here</a>
+after clonning....
+
+<br>
+
+move into the repo folder and 
+bash```
+npm i
+```
+
+then to launch server
+bash```
+npm start
+```
+
+App will be availabe at localhost:3000

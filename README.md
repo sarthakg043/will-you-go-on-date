@@ -4,12 +4,14 @@ after clonning....
 <br>
 
 move into the repo folder and 
-bash```
+
+```bash
 npm i
 ```
 
 then to launch server
-bash```
+
+```bash
 npm start
 ```
 

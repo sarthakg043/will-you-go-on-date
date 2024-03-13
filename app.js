@@ -7,9 +7,10 @@ require('dotenv').config();
 
 const app = express();
 const server = http.createServer(app);
-const port = 3000;
+const port = 5050;
 const io = socketIO(server);
 
+const {my_date, my_message} = require("./public/my_date")
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
@@ -32,9 +33,16 @@ const mailOptions = {
         address: process.env.MY_EMAIL,
     },
     to: ["sarthak22bcy54@iiitkottayam.ac.in"],
-    subject: "Hello using Nodemailer and Gmail ✔",
-    text: "Hello world",
-    html: "<b>Hello world💋</b>",
+    cc: ["sarthakg043@gmail.com"],
+    subject: "Bubu Wants to go on a Date 🥰",
+    html: `Bubu wants a date on: <b> ${my_date} </b><br>
+            <div style="font-family: Arial, sans-serif;">
+                <div style="width: 50%; margin: 50px auto; border: 2px solid #ccc; padding: 20px; border-radius: 10px; position: relative;">
+                    <p style="margin: 0; font-style: italic; color: #666; font-size: 16px;">"${my_message}"</p>
+                    <p style="margin: 10px 0 0 0; font-weight: bold; color: #333; font-size: 14px;">- Urvashi</p>
+                </div>
+            </div>
+    `,
 };
 
 const sendMail = async (transporter, mailOptions) => {
@@ -68,7 +76,8 @@ io.on('connection', (socket) => {
         io.emit('reload');
     });
 });
+
 // Start the server
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+server.listen(port, '0.0.0.0', () => {
+    console.log(`Server is running on http://0.0.0.0:${port}`);
 });

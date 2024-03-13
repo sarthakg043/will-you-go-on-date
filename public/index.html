@@ -4,15 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
-    <title>Document</title>
-
+    <title>SG's Proposal</title>
+    <link rel="icon" href="https://www.freeiconspng.com/uploads/red-heart-icon-dark-border-3.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
     
 </head>
 <body>
 
     <div id="container">
-        <div class="random-element"></div>
-        <div style="width:50px; height:50px; background-color:red;" id="sendEmailButton">Click Me</div>
+        <div class="title-text"><span class="title-icon">👋🏻</span> Hello Urvashi... </div>
+        <div class="detail-text">
+            <p>
+                Meri pyaari bubu<span class="title-icon">❤️</span> amidst all the emojis in my heart, you're the real <span class="title-icon">😍</span>.<br><br> Wanna be my partner in this wild journey of life and make every moment lit<span class="title-icon">🔥</span> together?
+            </p>
+        </div>
+        <form id="dateForm">
+            <label for="dateInput">Enter Date:</label>
+            <input type="date" id="dateInput" name="dateInput">
+            <br>
+            <label for="messageInput">Enter messageInput:</label>
+            <input type="textbox" id="messageInput" name="messageInput">
+            <br>
+            <button type="submit">Send Email</button>
+        </form>
+        <div class="button-container">
+            <div class="button" id="sendEmailButton">Yes</div>
+            <div class="button random-element">No</div>
+        </div>
     </div>
     <script src="script.js"></script>
     <script src="../socket.io/socket.io.js"></script>

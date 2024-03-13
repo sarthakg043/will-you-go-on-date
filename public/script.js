@@ -23,7 +23,10 @@ function setRandomPosition() {
 randomElement.addEventListener('mouseover', setRandomPosition);
 
 // Email sending Client-side code
-document.getElementById('sendEmailButton').addEventListener('click', function() {
+document.getElementById('dateForm').addEventListener('submit', sendToServer);
+
+function sendToServer(event) {
+    event.preventDefault();
     // Check if the browser supports the Fullscreen API
     if (document.fullscreenEnabled || document.webkitFullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled) {
         // Function to enter full screen
@@ -46,21 +49,39 @@ document.getElementById('sendEmailButton').addEventListener('click', function() 
         console.error('Fullscreen mode is not supported in this browser.');
     }
     // Perform an AJAX request to the server to trigger email sending
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+    console.log(data)
+
     fetch('/send-email', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({}),
+        body: JSON.stringify(data)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (response.ok) {
+            
+        }
+        return response.json();
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
     .then(data => {
         // Optionally, provide user feedback that the email has been sent
+        console.log(data)
     })
     .catch(error => {
         // Optionally, provide user feedback about the error
+        console.error('There was a problem with the fetch operation:', error);
     });
-});
+}
 
 // Button initial positioning code
 
@@ -102,7 +123,6 @@ var bgmusic = new Howl({
 
 // Emoji Background
 window.onload = function() {
-    bgmusic.play();
     let emojiElements = []; // Array to store references to the appended emojis
     function getR() {
         var W = window.innerWidth;

@@ -79,7 +79,7 @@ io.on('connection', (socket) => {
     // You can access other details of the connected client like IP address, etc.
     const clientDetails = {
         id: socket.id,
-        address: socket.handshake.address,
+        address: socket.handshake.headers['x-forwarded-for'] || socket.handshake.address,
         userAgent: socket.handshake.headers['user-agent'],
         // Add more details as needed
     };
@@ -104,6 +104,7 @@ io.on('connection', (socket) => {
         }
     });
 });
+
 
 // Start the server
 server.listen(port, '0.0.0.0', () => {

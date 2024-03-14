@@ -15,4 +15,4 @@ then to launch server
 npm start
 ```
 
-App will be availabe at localhost:3000
+App will be availabe at your-server-ip:5050

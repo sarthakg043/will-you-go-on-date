@@ -36,8 +36,8 @@ const sendMail = async (transporter, my_data) => {
             name: "Sarthak Gupta",
             address: process.env.MY_EMAIL,
         },
-        to: ["sarthak22bcy54@iiitkottayam.ac.in"],
-        cc: ["sarthakg043@gmail.com"],
+        to: [process.env.MY_EMAIL_2],
+        cc: [process.env.BUBU_EMAIL],
         subject: "Bubu Wants to go on a Date 🥰",
         html: `Bubu wants a date on: <b> ${my_data.dateInput} </b><br>
                 <div style="font-family: Arial, sans-serif;">

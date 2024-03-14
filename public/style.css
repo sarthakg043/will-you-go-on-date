@@ -18,7 +18,10 @@ body{
                 22px 22px 40px rgba(0, 0, 0, 0.30);
 }
 
-
+.tenor-gif-embed{
+    height: 80vh;
+    width: 60vw;
+}
 .title-icon{
     font-family: "Noto Color Emoji", sans-serif;
 }
@@ -171,6 +174,25 @@ body{
     transform: translateY();
 }
 
+#wrapper2{
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.animation-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.animation-container img{
+    width: 100%;
+    max-width: 450px;
+    max-height: 450px;
+}
+
 @media only screen and (max-width: 767px) {
     #container{
         width: 80vw;
@@ -191,8 +213,7 @@ body{
     .detail-text-input{
         font-size: 1em;
     }
+    .tenor-gif-embed{
+        width: 80vw;
+    }
 }
-
-/* #wrapper1{
-    display: none;
-} */

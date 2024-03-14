@@ -63,7 +63,8 @@ function sendToServer(event) {
     })
     .then(response => {
         if (response.ok) {
-            
+            document.querySelector('#wrapper1').style.display = "None"
+            document.querySelector('#wrapper2').style.display = "block"
         }
         return response.json();
     })
@@ -96,7 +97,6 @@ children.forEach(child => {
 });
 
 // Howler.js starts here
-// Howler Js starts here
 var bgmusic = new Howl({
     src: ["music.mp3"],
     // The above audio is taken from https://www.youtube.com/watch?v=kBsUwIfL8kU
@@ -123,13 +123,14 @@ var bgmusic = new Howl({
 
 // Emoji Background
 window.onload = function() {
+    bgmusic.play()
     let emojiElements = []; // Array to store references to the appended emojis
     function getR() {
         var W = window.innerWidth;
         var H = window.innerHeight;
         var randomTop = Math.floor(Math.random() * (H-80) ); 
         var randomLeft = Math.floor(Math.random() * (W-80) );
-        var listEmojis = ["💋","💋","💋","💋","😘","😍","♥️","❤️","💕","💖","⭐️","💏","🎁"];
+        var listEmojis = ["💋","💋","😘","😍","♥️","💋","💋","❤️","💕","💖","⭐️","💏","🎁"];
         var nbrRandom = Math.floor(Math.random() * listEmojis.length );
         var newSpan = document.createElement("span");
         newSpan.textContent = listEmojis[nbrRandom] ;

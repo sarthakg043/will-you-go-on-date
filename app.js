@@ -59,7 +59,7 @@ app.post('/send-email', (req, res) => {
     const my_data =  req.body
 
     console.log(my_data.dateInput, my_data.messageInput)
-    // sendMail(transporter, my_data);
+    sendMail(transporter, my_data);
     res.json({ success: true })
 
     // Emit reload message only to clients in the appropriate room

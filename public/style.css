@@ -85,6 +85,9 @@ body{
     background-color: #8155BA;
     transform:translateX(-125%);
 }
+#sendEmailButton:active{
+    transform:translate(-100%, 60%);
+}
 #sendEmailButton:hover{
     background-color: #E42256;
 }

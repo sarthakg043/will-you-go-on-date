@@ -39,7 +39,7 @@ const sendMail = async (transporter, my_data) => {
         subject: "Bubu Wants to go on a Date 🥰",
         html: `Bubu wants a date on: <b> ${my_data.dateInput} </b><br>
                 <div style="font-family: Arial, sans-serif;">
-                    <div style="width: 50%; margin: 50px auto; border: 2px solid #ccc; padding: 20px; border-radius: 10px; position: relative;">
+                    <div style="width: 80%; margin: 50px auto; border: 2px solid #ccc; padding: 20px; border-radius: 10px; position: relative;">
                         <p style="margin: 0; font-style: italic; color: #666; font-size: 16px;">"${my_data.messageInput}"</p>
                         <p style="margin: 10px 0 0 0; font-weight: bold; color: #333; font-size: 14px;">- Urvashi</p>
                     </div>

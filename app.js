@@ -12,8 +12,6 @@ const server = http.createServer(app);
 const port = 5050;
 const io = socketIO(server);
 
-const my_date = "dd-mm-yyyy"
-const my_message = "I love you"
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -61,7 +59,7 @@ app.post('/send-email', (req, res) => {
     const my_data =  req.body
 
     console.log(my_data.dateInput, my_data.messageInput)
-    sendMail(transporter, my_data);
+    // sendMail(transporter, my_data);
     res.json({ success: true })
 
     // Emit reload message only to clients in the appropriate room
